@@ -17,9 +17,23 @@ Todo elemento que aparece debe de estar operativo o simular operatividad
    - [] Acceso a Catalogo
    - [] Inicio de sesion funcional
 - [] Recuperar contrasena
+   - [x] Cambiar la contrasena en el sistema de arhivos paara el usuario
+   - [] Acceso a login
 - [] Registro
+   - [] Crear un usuario nuevo y ponerlo en el sistema de archivos
+   - [] Acceso a Log in
+   - [] Purgar las entradas
 - [] Catalogo de Peliculas
+   - [] Catalogo con las peliculas en carousel
+   - [] Acceso a la pagina de la pelicula
 - [] Ver pelicula
+   - [] La pagina se adapta a la pelicula seleccionada
 - [] Alta de pago
+   - [] Se pide la informacion de la targeta
+   - [] Purgar las entradas
 - [] Info de la subscripcion
+   - [] Tomar la informacion del usuario logeado
+   - [] Fecha de subscripcion
 - [] Ver info de pago
+   - [] Ver info del metodo de pago
+
