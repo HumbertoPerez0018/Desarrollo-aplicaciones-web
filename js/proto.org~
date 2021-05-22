@@ -1,0 +1,9 @@
+#+BEGIN_SRC js
+    var name = "pedro";
+  var pass = "pica";
+	var pago = "visa"
+	var age = 40
+
+    jsonText = "{" + "name" + ":" + "\"" + name + "\"" + "," +  "pass" + ":" + "\"" + pass + "\""   +  "," + "Mpago" + ":" + "\"" + pago + "\"" + "," + "age" + ":" + "\"" + age + "\""  + "}";
+
+#+END_SRC

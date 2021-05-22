@@ -1,0 +1,15 @@
+class user{
+		constructor(name, pass, Mpago, age){
+				this.name = name;
+				this.pass = pass;
+				this.Mpago = Mpago;
+				this.age = age;
+		}
+		changePass(NewPass){
+				this.pass = NewPass;
+		}
+		changeMP(Mpago){
+				this.Mpago = Mpago;
+		}
+}
+
