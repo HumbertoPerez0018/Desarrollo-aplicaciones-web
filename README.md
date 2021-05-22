@@ -17,7 +17,7 @@ Todo elemento que aparece debe de estar operativo o simular operatividad
    - [] Acceso a Catalogo
    - [] Inicio de sesion funcional
 - [] Recuperar contrasena
-   - [x] Cambiar la contrasena en el sistema de arhivos paara el usuario
+   - [x] Cambiar la contrasena en el sistema de arhivos para el usuario
    - [] Acceso a login
 - [] Registro
    - [] Crear un usuario nuevo y ponerlo en el sistema de archivos
