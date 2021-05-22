@@ -1,6 +1,6 @@
 # PROYECTO
 ## Desarrolla tu sistema WEB
-### Apartir del prototipo desarrollado, construyeelfront-end de tu sistema web:
+### Apartir del prototipo desarrollado, construye el front-end de tu sistema web:
 - No es permitido el uso de plantillas preexistentes.
 - Utiliza HTML, CSS y Javascript
 - Debe considerarse un mínimo de 7 páginas web
@@ -10,3 +10,16 @@
 - Creacion de un sistema manejador de eventos entre back-end y front-end ( API ) es opcional
 ### El sistema debe de ser completamente funcional
 Todo elemento que aparece debe de estar operativo o simular operatividad
+## Paginas minimas
+- [] Log in
+   - [] Acceso a Registro
+   - [] Acceso a Recuperar contrasena
+   - [] Acceso a Catalogo
+   - [] Inicio de sesion funcional
+- [] Recuperar contrasena
+- [] Registro
+- [] Catalogo de Peliculas
+- [] Ver pelicula
+- [] Alta de pago
+- [] Info de la subscripcion
+- [] Ver info de pago
