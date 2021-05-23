@@ -1,10 +1,17 @@
-class user{
-		constructor(id, name, pass, pago, age){
+console.log("user class loaded");
+// pago y name son objetos, no strings
+function CreateUser(id, name, pass, pago, age, Uname){
+		var probUser = new User(id, name, pass, pago, age, Uname);
+		return probUser;
+}
+class User{
+		constructor(id, name, pass, pago, age, Uname){
 				this.id = id;
 				this.name = name;
 				this.pass = pass;
 				this.pago = pago;
 				this.age = age;
+				this.Uname = Uname;
 		}
 		changePass(NewPass){
 				this.pass = NewPass;
@@ -17,7 +24,8 @@ class user{
 						"name" : this.name,
 						"pass" : this.pass,
 						"pago" : this.pago,
-						"age" : this.age
+						"age" : this.age,
+						"UserName" : this.Uname
 				};
 				jsonOb = JSON.stringify(jsonOb);
 				localStorage.setItem(this.id, jsonOb);
@@ -30,8 +38,7 @@ class Pago{
 				this.number = number;
 				this.age = expDate;
 		}
-		changeCard(id, name, number, expDate){
-				this.id = id;
+		changeCard( name, number, expDate){
 				this.name = name;
 				this.number = number;
 				this.age = expDate;
