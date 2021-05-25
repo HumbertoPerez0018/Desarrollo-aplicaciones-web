@@ -1,0 +1,3 @@
+function createNewUser(id, name, pass, pago, age, Uname){
+	var new user (id, name, pass, pago, age, Uname)
+}

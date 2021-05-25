@@ -1,0 +1,7 @@
+const NaranjaMecanicaObj= {
+	name : "Naranja Mecania",
+	fechan : "22 / 01 / 1971",
+	Genero : "Crime",
+	Director : "Stanley Kubrick",
+	Review : "In the future, a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment, but it doesn't go as planned."
+}
