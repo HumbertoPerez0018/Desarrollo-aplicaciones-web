@@ -1,67 +1,174 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<script src="./js/populate.js"></script>
 		<script src="./js/UserClass.js"></script>
 		<script src="./js/LogIn.js"></script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<title>Netflix</title>
 	</head>
-	<body onload="initFunc()">
-		<h1>Hola mundo</h1>
-	</body>
+	<body>
+	<div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+			<a href="#" class="w3-bar-item w3-button w3-padding-large w3-red">Netflix</a>
+		</div>
+	</div>
+	<div class="w3-content" style="max-width:2000px;margin-top:46px">
+		<div class="movieSlides w3-display-container w3-center">
+			<img src="img/endgame.jpeg" style="width:100%" height="900px">
+			<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+				<h3>Endgame</h3>
+				<p><b>La batalla continua</b></p>
+			</div>
+		</div>
+		<div class="movieSlides w3-display-container w3-center">
+			<img src="img/joker.png" style="width:100%" alt="" height="900px">
+			<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+				<h3>Joker</h3>
+				<p><b>el payaso mas loco</b></p>
+			</div>
+		</div>
+		<div class="movieSlides w3-display-container w3-center">
+			<img src="img/greenbook.gif" style="width:100%" height="900px">
+			<div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+				<h3>Green Book</h3>
+				<p><b>Las mejores batallas contra el racismo americano</b></p>
+			</div>
+		</div>
+	</div>
+	<div class="w3-display-middle" style="width:25%">
+		<div class="w3-bar w3-black">
+			<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Login');"><i class="fa fa-envelope w3-margin-right"></i>Login</button>
+			<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'SingUp');"><i class="fa fa-user-plus w3-margin-right"></i>Signup</button>
+		</div>
+		<div id="Login" class="w3-container w3-white w3-padding-16 myLink">
+			<h3>Bienvenido de Vuelta</h3>
+			<div class="w3-row-padding" style="margin:0 -16px;">
+				<div class="w3-half">
+					<label>Correo</label>
+					<input class="w3-input w3-border" type="email" placeholder="aaaaaa@dominio.com">
+				</div>
+				<div class="w3-half">
+					<label>Password</label>
+					<input class="w3-input w3-border" type="password" placeholder="Password">
+				</div>
+			</div>
+			<p><button class="w3-button w3-dark-grey">Login</button></p>
+		</div>
+
+		<div id="SingUp" class="w3-container w3-white w3-padding-16 myLink">
+			<h3>Registro a una nueva experiencia</h3>
+			<div class="w3-rest">
+				<label>Nombre</label>
+				<input class="w3-input w3-border" type="text" placeholder="aaaaaa@dominio.com">
+			</div>
+			<div class="w3-rest">
+				<label>Correo</label>
+				<input class="w3-input w3-border" type="email" placeholder="aaaaaa@dominio.com">
+			</div>
+			<div class="w3-rest">
+				<label>Password</label>
+				<input class="w3-input w3-border" type="password" placeholder="Password">
+			</div>
+			<p><button class="w3-button w3-dark-grey">Registrate</button></p>
+		</div>
+
+	</div>
+
 	<script>
-	 // Erase from here
-	 var pass = "constante";
-	 var UserTest = new User(101, "Humberto Perez", "patito100", "free", 25, "Humberto101" )
-	 UserTest.toMemorie()
-	 //To here
-	 var Ucounter = 0
-   localStorage.setItem("NoUsers", 0)
-	 function initFunc(){
-		 var fuser = new User(1, "pedro", "pass", "MC", 40);
-		 populateDB()
-		 logIn()
-	 }
-	 function populateDB(){
-		 for(var i = 0; i < 20; i++){
-			 localStorage.setItem("NoUsers", i);
-			 Ucounter = i;
-			 var id  = localStorage.getItem("NoUsers");
-			 var Fullname = {"Fname" : names[Math.floor((Math.random() * names.length - 1) + 1)],
-											 "Lname" : lastnames[Math.floor((Math.random() * lastnames.length -1) + 1)]
-			 }
-			 var PayInfo = {"name": cardType[Math.floor((Math.random() * cardType.length - 1) + 1)],
-											"number" : cardNumber(),
-											"expDate" : ExpDate()
-			 }
-			 var UsrName = Fullname.Fname + id;
-			 var UsuarioCreado = CreateUser(id, Fullname, pass, PayInfo, 50, UsrName)
-			 UsuarioCreado.toMemorie();
-		 }
-	 }
-	 function logIn(){
-		 //fromDoc get User name
-		 var RightUser = null
-		 var fromDocU = "Humberto101";
-		 var fromDocP = "patito100";
-		 //fromDoc get password
-		 var Userinfo = null
-		 for( var i = 0; i <= Ucounter; i ++ ){
-			 Userinfo = localStorage.getItem(i);
-			 Userinfo = JSON.parse(Userinfo);
-			 console.log(Userinfo);
-			 if( Userinfo.Uname == fromDocU){
-				 if( Userinfo.pass == fromDocP){
-					 console.log("usuario Valido, ve a la pagina home")
-					 RightUser = true
-					 break;
-				 }
-			 }
-		 }
-		 if(RightUser == true){
-			 console.log("usuario verficado");
-		 }
-		 else{
-			 console.log("usuario Incorrecto");
-		 }
-	 }
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("movieSlides");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].className = slides[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block";
+			slides[slideIndex-1].className += " active";
+			setTimeout(showSlides, 2000); // Change image every 2 seconds
+		}
+		function openLink(evt, linkName) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("myLink");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+			}
+			document.getElementById(linkName).style.display = "block";
+			evt.currentTarget.className += " w3-red";
+		}
+
+		// Click on the first tablink on load
+		document.getElementsByClassName("tablink")[0].click();
+		// Erase from here
+		var pass = "constante";
+		var UserTest = new User(101, "Humberto Perez", "patito100", "free", 25, "Humberto101" )
+		UserTest.toMemorie()
+		//To here
+		var Ucounter = 0
+		localStorage.setItem("NoUsers", 0)
+		function initFunc(){
+			var fuser = new User(1, "pedro", "pass", "MC", 40);
+			populateDB()
+			logIn()
+		}
+		function populateDB(){
+			for(var i = 0; i < 20; i++){
+				localStorage.setItem("NoUsers", i);
+				Ucounter = i;
+				var id  = localStorage.getItem("NoUsers");
+				var Fullname = {"Fname" : names[Math.floor((Math.random() * names.length - 1) + 1)],
+					"Lname" : lastnames[Math.floor((Math.random() * lastnames.length -1) + 1)]
+				}
+				var PayInfo = {"name": cardType[Math.floor((Math.random() * cardType.length - 1) + 1)],
+					"number" : cardNumber(),
+					"expDate" : ExpDate()
+				}
+				var UsrName = Fullname.Fname + id;
+				var UsuarioCreado = CreateUser(id, Fullname, pass, PayInfo, 50, UsrName)
+				UsuarioCreado.toMemorie();
+			}
+		}
+		function logIn(){
+			//fromDoc get User name
+			var RightUser = null
+			var fromDocU = "Humberto101";
+			var fromDocP = "patito100";
+			//fromDoc get password
+			var Userinfo = null
+			for( var i = 0; i <= Ucounter; i ++ ){
+				Userinfo = localStorage.getItem(i);
+				Userinfo = JSON.parse(Userinfo);
+				console.log(Userinfo);
+				if( Userinfo.Uname == fromDocU){
+					if( Userinfo.pass == fromDocP){
+						console.log("usuario Valido, ve a la pagina home")
+						RightUser = true
+						break;
+					}
+				}
+			}
+			if(RightUser == true){
+				console.log("usuario verficado");
+			}
+			else{
+				console.log("usuario Incorrecto");
+			}
+		}
 	</script>
+	</body>
 </html>
