@@ -52,3 +52,13 @@ class Pago{
 				return jsonObj;
 		}
 }
+
+class Pelicula{
+		constructor(name){
+				this.name = name;
+		}
+		getImage(){
+				return "./img/" + this.name + ".jpg";
+		}
+}
+
