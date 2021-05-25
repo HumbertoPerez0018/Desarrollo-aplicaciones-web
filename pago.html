@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
+		<script src="./js/Registro.js"></script>
+		<script src="./js/populate.js"></script>
+		<script src="./js/UserClass.js"></script>
+		<script src="./js/LogIn.js"></script>
 
     <title>Forma de Pago</title>
 </head>
@@ -28,19 +32,19 @@
     </div>
     <div class="w3-half w3-center">
         <h3> Nombre como aparece en la tarjeta</h3>
-        <input type="text" placeholder="Nombre completo">
+        <input type="text" placeholder="Nombre completo" id="nombreC">
     </div>
     <div class="w3-half w3-center">
         <h3> Numero de tarjeta</h3>
-        <input type="number" placeholder="XXXX-XXXX-XXXX-XXX">
+        <input type="number" placeholder="XXXX-XXXX-XXXX-XXX" id="noTarjeta">
     </div>
     <div class="w3-half w3-center">
         <h3>Vigencia</h3>
-        <input type="month">
+        <input type="month" id="vigencia" id="vigencia">
     </div>
     <div class="w3-half w3-center">
         <h3> CVC</h3>
-        <input type="number" placeholder="XXX">
+        <input type="number" placeholder="XXX" id="numeroSeguridad">
     </div>
     <div class="w3-twothird">
         <h1>Datos de la Cuenta</h1>
@@ -55,12 +59,29 @@
             <input type="password" placeholder="Password">
         </div>
         <div class="w3-half w3-center">
-            <h3>Confirma Contraseña</h3>
-            <input type="password" placeholder=" Confirm Password">
+          <h3>Confirma Contraseña</h3>
+          <input type="password" placeholder="Confirm Password">
+					<button typer="button" onclick="createNewPay()"></button>
         </div>
     </div>
 
 </div>
-
 </body>
+<script>
+ function createNewPay(){
+	 var NoT = document.getElementById("nombreC").value;
+	 var NuT = document.getElementById("noTarjeta").value;
+	 var vig = document.getElementById("vigencia").value;
+	 var formaDePago = new Pago(NoT, NuT, vig);
+	 console.log(formaDePago)
+	 var currentUserNO = localStorage.getItem("CurrentUser");
+	 var currentUser = localStorage.getItem(currentUserNO);
+	 currentUser = JSON.parse(currentUser);
+	 console.log(currentUser.id)
+	 var BufferUser = new User(currentUserNO, currentUser.name, currentUser.pass, formaDePago, currentUser.age,currentUser.name.Fname + currentUserNO )
+	 console.log(BufferUser)
+	 console.log(BufferUser.id);
+	 BufferUser.toMemorie()
+ }
+</script>
 </html>

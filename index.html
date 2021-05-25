@@ -121,6 +121,8 @@
 	 //To here
 	 var Ucounter = 0
 	 localStorage.setItem("NoUsers", 0)
+
+	 
 	 function populateDB(){
 		 for(var i = 0; i < 30; i++){
 			 localStorage.setItem("NoUsers", i);
@@ -138,7 +140,12 @@
 			 UsuarioCreado.toMemorie();
 		 }
 	 }
+
+	 
 	 populateDB()
+
+
+	 
 	 function Login(){
 		 var NoUsuarios = Number(localStorage.getItem("NoUsers")) ;
 		 var email = document.getElementById("NameInput").value;
@@ -148,10 +155,9 @@
 		 }else{
 			 for(var i = 0; i <= NoUsuarios; i ++) {
 				 var usuario = JSON.parse(localStorage.getItem( i ) );
-				 console.log("Lo que trae el local " + usuario.name.Lname + " Lo que puse como usuario " + email)
 				 if( usuario.name.Lname == email && usuario.pass == passWord){
 					 //Goto Catalogo
-					 window.location.href = "http://www.google.com";
+					 localStorage.setItem("CurrentUser", i)
 					 break;
 				 }
 			 }
@@ -168,8 +174,11 @@
 		 var NuevoUsuario  = new User (nextId, fullName, passIn, null, null, nombreIn + nextId);
 		 NuevoUsuario.toMemorie();
 		 console.log(NuevoUsuario);
+		 localStorage.setItem("CurrentUser", nextId)
 		 localStorage.setItem("NoUsers", nextId)
+		 window.location.href = "file:///home/nirvana/School/clases-Enero-Junio-21/Desarrollo_de_aplicaciones_web/Proyecto-Desarrollo-Aplicaciones-Web/pago.html";
 	 }
+
 	</script>
 	</body>
 </html>
