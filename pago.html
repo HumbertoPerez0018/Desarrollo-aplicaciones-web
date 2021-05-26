@@ -80,21 +80,22 @@
       document.getElementById("visa").checked = false;
       stateTarjeta = 'Master Card'
   }
- function createNewPay(){
-	 var NoT = document.getElementById("nombreC").value;
-	 var NuT = document.getElementById("noTarjeta").value;
-	 var vig = document.getElementById("vigencia").value;
-	 var formaDePago = new Pago(stateTarjeta, NuT, vig);
-	 console.log(formaDePago)
-	 var currentUserNO = localStorage.getItem("CurrentUser");
-	 var currentUser = localStorage.getItem(currentUserNO);
-	 currentUser = JSON.parse(currentUser);
-	 console.log(currentUser.id)
-	 var BufferUser = new User(currentUserNO, currentUser.name, currentUser.pass, formaDePago, currentUser.age,currentUser.name.Fname + currentUserNO )
-	 console.log(BufferUser)
-	 console.log(BufferUser.id);
-	 BufferUser.toMemorie()
- }
+  function createNewPay(){
+      var NoT = document.getElementById("nombreC").value;
+      var NuT = document.getElementById("noTarjeta").value;
+      var vig = document.getElementById("vigencia").value;
+      var formaDePago = new Pago(stateTarjeta, NuT, vig);
+      console.log(formaDePago)
+      var currentUserNO = localStorage.getItem("CurrentUser");
+      var currentUser = localStorage.getItem(currentUserNO);
+      currentUser = JSON.parse(currentUser);
+      console.log(currentUser.id)
+      var BufferUser = new User(currentUserNO, currentUser.name, currentUser.pass, formaDePago, currentUser.age,currentUser.name.Fname + currentUserNO )
+      console.log(BufferUser)
+      console.log(BufferUser.id);
+      BufferUser.toMemorie()
+      window.location.href='./catalogo.html';
+  }
 
 </script>
 </html>
