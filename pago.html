@@ -20,12 +20,12 @@
         <h2>Elige tipo de tarjeta</h2>
     </div>
     <div class="w3-third">
-        <label>
-            <input type="radio" id="visa" value="small" checked>
+      <label>
+        <input type="radio" id="visa" value="small" onclick="selectCard()" checked>
             <img src="img/Visa-icon.png">
         </label>
         <label>
-            <input type="radio" id="master" value="small">
+          <input type="radio" id="master" value="small" onclick="selectCard()">
             <img src="img/Master-Card.png">
         </label>
     </div>
@@ -82,5 +82,6 @@
 	 console.log(BufferUser.id);
 	 BufferUser.toMemorie()
  }
+
 </script>
 </html>
