@@ -81,8 +81,9 @@
       stateTarjeta = 'Master Card'
   }
   function createNewPay(){
-      var NoT = document.getElementById("nombreC").value;
-      var NuT = document.getElementById("noTarjeta").value;
+    var NoT = document.getElementById("nombreC").value;
+    var NuT = document.getElementById("noTarjeta").value;
+		console.log(NuT)
       var vig = document.getElementById("vigencia").value;
       var formaDePago = new Pago(stateTarjeta, NuT, vig);
       console.log(formaDePago)

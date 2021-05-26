@@ -42,7 +42,7 @@
 	</div>
 	<div class="w3-display-middle" style="width:25%">
 		<div class="w3-bar w3-black">
-			<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Login');"><i class="fa fa-envelope w3-margin-right"></i>Login</button>
+			<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Login');"><i class="fa fa-envelope w3-margin-right" ></i>Login</button>
 			<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'SingUp');"><i class="fa fa-user-plus w3-margin-right"></i>Signup</button>
 		</div>
 		<div id="Login" class="w3-container w3-white w3-padding-16 myLink">
@@ -147,22 +147,27 @@
 
 	 
 	 function Login(){
+		 console.log("modelo de negocios")
 		 var NoUsuarios = Number(localStorage.getItem("NoUsers")) ;
 		 var email = document.getElementById("NameInput").value;
+		 console.log(email)
 		 var passWord = document.getElementById("PassInt").value;
+		 console.log(passWord);
 		 if(passWord.value == "" || email.value == ""){
 			 alert("Es necesario el usuario y la contrasena")
 		 }else{
 			 for(var i = 0; i <= NoUsuarios; i ++) {
 				 var usuario = JSON.parse(localStorage.getItem( i ) );
 				 if( usuario.name.Lname == email && usuario.pass == passWord){
-					 //Goto Catalogo
+					 window.location.href = "./catalogo.html";
 					 localStorage.setItem("CurrentUser", i)
 					 break;
 				 }
 			 }
 		 }
 	 }
+
+
 	 //Falta el campo de la edad
 	 function SignUp(){
 		 var nextId = Number(localStorage.getItem("NoUsers")) + 1;
