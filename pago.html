@@ -21,11 +21,11 @@
     </div>
     <div class="w3-third">
       <label>
-        <input type="radio" id="visa" value="small" onclick="selectCard()" checked>
+        <input type="radio" id="visa" value="small" onclick="selectCardVisa()" >
             <img src="img/Visa-icon.png">
         </label>
         <label>
-          <input type="radio" id="master" value="small" onclick="selectCard()">
+          <input type="radio" id="master" value="small" onclick="selectCardMaster()">
             <img src="img/Master-Card.png">
         </label>
     </div>
@@ -60,18 +60,31 @@
         <div class="w3-half w3-center">
           <h3>Confirma Contraseña</h3>
           <input type="password" placeholder="Confirm Password">
-					<button typer="button" onclick="createNewPay()"></button>
+					<button typer="button" onclick="createNewPay()">Confirmar</button>
         </div>
     </div>
 
 </div>
 </body>
 <script>
+  //  document.getElementById("master").checked = true;
+  var stateTarjeta = 'none'
+  function selectCardVisa(){
+      document.getElementById("master").checked = false;
+      document.getElementById("visa").checked = true;
+      stateTarjeta = 'visa'
+  }
+
+  function selectCardMaster(){
+      document.getElementById("master").checked = true;
+      document.getElementById("visa").checked = false;
+      stateTarjeta = 'Master Card'
+  }
  function createNewPay(){
 	 var NoT = document.getElementById("nombreC").value;
 	 var NuT = document.getElementById("noTarjeta").value;
 	 var vig = document.getElementById("vigencia").value;
-	 var formaDePago = new Pago(NoT, NuT, vig);
+	 var formaDePago = new Pago(stateTarjeta, NuT, vig);
 	 console.log(formaDePago)
 	 var currentUserNO = localStorage.getItem("CurrentUser");
 	 var currentUser = localStorage.getItem(currentUserNO);
