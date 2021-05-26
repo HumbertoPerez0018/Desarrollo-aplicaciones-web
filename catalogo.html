@@ -79,15 +79,17 @@
 </div>
 
 <script>
-    function w3_open() {
-        document.getElementById("sideMenu").style.display = "block";
-    }
-    function w3_close() {
-        document.getElementById("sideMenu").style.display = "none";
-    }
+ function w3_open() {
+   document.getElementById("sideMenu").style.display = "block";
+ }
+ function w3_close() {
+   document.getElementById("sideMenu").style.display = "none";
+ }
  function  selected(Movie){
 	 localStorage.setItem("movie", Movie);
-	 console.log(Movie)
+	 
+	 window.location.href = "./detallePelicula.html";
+
  }
 </script>
 
