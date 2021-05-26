@@ -15,6 +15,7 @@ const OdiseaDelEspacio = {
 }
 
 const ElResplandor = {
+	img : "ElResplandor",
 	name : "EL Resplandor",
 	fechan : "22 / 01 / 1980",
 	Genero : "Horror",
@@ -23,6 +24,7 @@ const ElResplandor = {
 }
 
 const DrInsólito = {
+	img : "DrInsólito",
 	name : "Dr. Insólito o Cómo aprendí a no preocuparme y amar la bomba",
 	fechan : "22 / 01 / 1964",
 	Genero : "Drama",
@@ -31,6 +33,7 @@ const DrInsólito = {
 }
 
 const SWV = {
+	img : "SWV",
 	name : "La guerra de las galaxias : El imperio contraataca",
 	fechan : "23 / 12 / 1980",
 	Genero : "Sci-fi",
@@ -39,6 +42,7 @@ const SWV = {
 }
 
 const SWIV = {
+	img : "SWIV",
 	name : "La guerra de las galaxias : Una nueva esperanza",
 	fechan : "23 / 12 / 1977",
 	Genero : "Sci-fi",
@@ -46,7 +50,8 @@ const SWIV = {
 	Review : "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader."
 }
 
-const SWIV = {
+const SWVI = {
+	img : "SWVI",
 	name : "La guerra de las galaxias : El regreso del Jedi",
 	fechan : "16 / 12 / 1977",
 	Genero : "Sci-fi",
@@ -55,6 +60,7 @@ const SWIV = {
 }
 
 const SWRO = {
+	img : "SWRO",
 	name : "Rogue One: Una historia de Star Wars",
 	fechan : "15 / 12 / 2016",
 	Genero : "Sci-fi",
@@ -63,6 +69,7 @@ const SWRO = {
 }
 
 const LOTRLA = {
+	img : "LOTRLA",
 	name : "El señor de los anillos: La comunidad del anillo",
 	fechan : "21 / 12 / 2001",
 	Genero : "Adventure",
@@ -71,6 +78,7 @@ const LOTRLA = {
 }
 
 const LOTR2T = {
+	img : "LOTR2T",
 	name : "El señor de los anillos: Las dos torres",
 	fechan : "20 / 12 / 2002",
 	Genero : "Adventure",
@@ -79,6 +87,7 @@ const LOTR2T = {
 }
 
 const LOTRRR = {
+	img : "LOTRRR",
 	name : "El señor de los anillos: El retorno del Rey",
 	fechan : "17 / 12 / 2003",
 	Genero : "Adventure",
@@ -87,6 +96,7 @@ const LOTRRR = {
 }
 
 const FMJ = {
+	img : "FMJ",
 	name : "Cara de Guerra",
 	fechan : "28 / 04 / 88",
 	Genero : "Action",
@@ -95,6 +105,7 @@ const FMJ = {
 }
 
 const UnPerroAndaluz = {
+	img : "UnPerroAndaluz",
 	name : "Un Perro Anda Luz",
 	fechan : "06 / 06 / 29",
 	Genero : "Surreal",
@@ -104,6 +115,7 @@ const UnPerroAndaluz = {
 
 
 const ElAngelExterminador= {
+	img : "ElAngelExterminador",
 	name : "El ángel exterminador",
 	fechan : "22 / 09 / 66",
 	Genero : "Surreal",
@@ -113,6 +125,7 @@ const ElAngelExterminador= {
 
 
 const BastardosSinGloria= {
+	img : "BastardosSinGloria",
 	name : "Bastardos sin gloria",
 	fechan : "09 / 10 / 09",
 	Genero : "Action",
@@ -122,6 +135,7 @@ const BastardosSinGloria= {
 
 
 const KillBillBA = {
+	img : "KillBillBA",
 	name : "Kill Bill: The Whole Bloody Affair",
 	fechan : "27 / 03 / 11",
 	Genero : "Action",
@@ -131,6 +145,7 @@ const KillBillBA = {
 
 
 const KillBillV1 = {
+	img : "KillBillV1",
 	name : "Kill Bill: Volumen 1",
 	fechan : "28 / 11 / 03",
 	Genero : "Action",
@@ -140,6 +155,7 @@ const KillBillV1 = {
 
 
 const KillBillV2 = {
+	img : "KillBillV2",
 	name : "Kill Bill: Volumen 2",
 	fechan : "21 / 04 / 04",
 	Genero : "Action",
@@ -149,6 +165,7 @@ const KillBillV2 = {
 
 
 const Los8 = {
+	img : "Los8",
 	name : "Los 8 más odiados",
 	fechan : "05 / 02 / 16",
 	Genero : "Accion",
