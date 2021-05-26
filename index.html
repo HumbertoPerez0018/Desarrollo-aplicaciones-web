@@ -50,125 +50,135 @@
 			<div class="w3-row-padding" style="margin:0 -16px;">
 				<div class="w3-half">
 					<label>Correo</label>
-					<input class="w3-input w3-border" type="email" placeholder="aaaaaa@dominio.com">
+					<input class="w3-input w3-border" id="NameInput" type="email" placeholder="aaaaaa@dominio.com">
 				</div>
 				<div class="w3-half">
 					<label>Password</label>
-					<input class="w3-input w3-border" type="password" placeholder="Password">
+					<input class="w3-input w3-border" id="PassInt" type="password" placeholder="Password">
 				</div>
 			</div>
-			<p><button class="w3-button w3-dark-grey">Login</button></p>
+			<p><button class="w3-button w3-dark-grey" onclick="Login()">Login</button></p>
 		</div>
 
 		<div id="SingUp" class="w3-container w3-white w3-padding-16 myLink">
 			<h3>Registro a una nueva experiencia</h3>
 			<div class="w3-rest">
 				<label>Nombre</label>
-				<input class="w3-input w3-border" type="text" placeholder="aaaaaa@dominio.com">
+				<input class="w3-input w3-border" type="text" placeholder="Nombre con apellidos" id="nombre">
 			</div>
 			<div class="w3-rest">
 				<label>Correo</label>
-				<input class="w3-input w3-border" type="email" placeholder="aaaaaa@dominio.com">
+				<input class="w3-input w3-border" type="email" placeholder="usuario@micorreo.com" id="correo">
 			</div>
 			<div class="w3-rest">
 				<label>Password</label>
-				<input class="w3-input w3-border" type="password" placeholder="Password">
+				<input class="w3-input w3-border" type="password" placeholder="Password" id="newpass">
 			</div>
-			<p><button class="w3-button w3-dark-grey">Registrate</button></p>
+			<p><button class="w3-button w3-dark-grey" onclick = "SignUp()">Registrate</button></p>
 		</div>
 
 	</div>
 
 	<script>
-		var slideIndex = 0;
-		showSlides();
+	 var slideIndex = 0;
+	 showSlides();
 
-		function showSlides() {
-			var i;
-			var slides = document.getElementsByClassName("movieSlides");
-			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";
-			}
-			slideIndex++;
-			if (slideIndex > slides.length) {slideIndex = 1}
-			for (i = 0; i < slides.length; i++) {
-				slides[i].className = slides[i].className.replace(" active", "");
-			}
-			slides[slideIndex-1].style.display = "block";
-			slides[slideIndex-1].className += " active";
-			setTimeout(showSlides, 2000); // Change image every 2 seconds
-		}
-		function openLink(evt, linkName) {
-			var i, x, tablinks;
-			x = document.getElementsByClassName("myLink");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("tablink");
-			for (i = 0; i < x.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-			}
-			document.getElementById(linkName).style.display = "block";
-			evt.currentTarget.className += " w3-red";
-		}
+	 function showSlides() {
+		 var i;
+		 var slides = document.getElementsByClassName("movieSlides");
+		 for (i = 0; i < slides.length; i++) {
+			 slides[i].style.display = "none";
+		 }
+		 slideIndex++;
+		 if (slideIndex > slides.length) {slideIndex = 1}
+		 for (i = 0; i < slides.length; i++) {
+			 slides[i].className = slides[i].className.replace(" active", "");
+		 }
+		 slides[slideIndex-1].style.display = "block";
+		 slides[slideIndex-1].className += " active";
+		 setTimeout(showSlides, 2000); // Change image every 2 seconds
+	 }
+	 function openLink(evt, linkName) {
+		 var i, x, tablinks;
+		 x = document.getElementsByClassName("myLink");
+		 for (i = 0; i < x.length; i++) {
+			 x[i].style.display = "none";
+		 }
+		 tablinks = document.getElementsByClassName("tablink");
+		 for (i = 0; i < x.length; i++) {
+			 tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+		 }
+		 document.getElementById(linkName).style.display = "block";
+		 evt.currentTarget.className += " w3-red";
+	 }
 
-		// Click on the first tablink on load
-		document.getElementsByClassName("tablink")[0].click();
-		// Erase from here
-		var pass = "constante";
-		var UserTest = new User(101, "Humberto Perez", "patito100", "free", 25, "Humberto101" )
-		UserTest.toMemorie()
-		//To here
-		var Ucounter = 0
-		localStorage.setItem("NoUsers", 0)
-		function initFunc(){
-			var fuser = new User(1, "pedro", "pass", "MC", 40);
-			populateDB()
-			logIn()
-		}
-		function populateDB(){
-			for(var i = 0; i < 20; i++){
-				localStorage.setItem("NoUsers", i);
-				Ucounter = i;
-				var id  = localStorage.getItem("NoUsers");
-				var Fullname = {"Fname" : names[Math.floor((Math.random() * names.length - 1) + 1)],
-					"Lname" : lastnames[Math.floor((Math.random() * lastnames.length -1) + 1)]
-				}
-				var PayInfo = {"name": cardType[Math.floor((Math.random() * cardType.length - 1) + 1)],
-					"number" : cardNumber(),
-					"expDate" : ExpDate()
-				}
-				var UsrName = Fullname.Fname + id;
-				var UsuarioCreado = CreateUser(id, Fullname, pass, PayInfo, 50, UsrName)
-				UsuarioCreado.toMemorie();
-			}
-		}
-		function logIn(){
-			//fromDoc get User name
-			var RightUser = null
-			var fromDocU = "Humberto101";
-			var fromDocP = "patito100";
-			//fromDoc get password
-			var Userinfo = null
-			for( var i = 0; i <= Ucounter; i ++ ){
-				Userinfo = localStorage.getItem(i);
-				Userinfo = JSON.parse(Userinfo);
-				console.log(Userinfo);
-				if( Userinfo.Uname == fromDocU){
-					if( Userinfo.pass == fromDocP){
-						console.log("usuario Valido, ve a la pagina home")
-						RightUser = true
-						break;
-					}
-				}
-			}
-			if(RightUser == true){
-				console.log("usuario verficado");
-			}
-			else{
-				console.log("usuario Incorrecto");
-			}
-		}
+	 // Click on the first tablink on load
+	 document.getElementsByClassName("tablink")[0].click();
+	 // Erase from here
+	 var pass = "constante";
+	 var UserTest = new User(101, "Humberto Perez", "patito100", "free", 25, "Humberto101" )
+	 UserTest.toMemorie()
+	 //To here
+	 var Ucounter = 0
+	 localStorage.setItem("NoUsers", 0)
+
+	 
+	 function populateDB(){
+		 for(var i = 0; i < 30; i++){
+			 localStorage.setItem("NoUsers", i);
+			 Ucounter = i;
+			 var id  = localStorage.getItem("NoUsers");
+			 var Fullname = {"Fname" : names[Math.floor((Math.random() * names.length - 1) + 1)],
+											 "Lname" : lastnames[Math.floor((Math.random() * lastnames.length -1) + 1)] + "@itesm.mx"
+			 }
+			 var PayInfo = {"name": cardType[Math.floor((Math.random() * cardType.length - 1) + 1)],
+											"number" : cardNumber(),
+											"expDate" : ExpDate()
+			 }
+			 var UsrName = Fullname.Fname + id;
+			 var UsuarioCreado = CreateUser(id, Fullname, pass, PayInfo, 50, UsrName)
+			 UsuarioCreado.toMemorie();
+		 }
+	 }
+
+	 
+	 populateDB()
+
+
+	 
+	 function Login(){
+		 var NoUsuarios = Number(localStorage.getItem("NoUsers")) ;
+		 var email = document.getElementById("NameInput").value;
+		 var passWord = document.getElementById("PassInt").value;
+		 if(passWord.value == "" || email.value == ""){
+			 alert("Es necesario el usuario y la contrasena")
+		 }else{
+			 for(var i = 0; i <= NoUsuarios; i ++) {
+				 var usuario = JSON.parse(localStorage.getItem( i ) );
+				 if( usuario.name.Lname == email && usuario.pass == passWord){
+					 //Goto Catalogo
+					 localStorage.setItem("CurrentUser", i)
+					 break;
+				 }
+			 }
+		 }
+	 }
+	 //Falta el campo de la edad
+	 function SignUp(){
+		 var nextId = Number(localStorage.getItem("NoUsers")) + 1;
+		 var nombreIn = document.getElementById("nombre").value;
+		 var emailIn = document.getElementById("correo").value;
+		 var passIn = document.getElementById("newpass").value;
+		 var fullName = {"Fname" : nombreIn,
+										 "Lname" : emailIn,}
+		 var NuevoUsuario  = new User (nextId, fullName, passIn, null, null, nombreIn + nextId);
+		 NuevoUsuario.toMemorie();
+		 console.log(NuevoUsuario);
+		 localStorage.setItem("CurrentUser", nextId)
+		 localStorage.setItem("NoUsers", nextId)
+		 window.location.href = "file:///home/nirvana/School/clases-Enero-Junio-21/Desarrollo_de_aplicaciones_web/Proyecto-Desarrollo-Aplicaciones-Web/pago.html";
+	 }
+
 	</script>
 	</body>
 </html>
